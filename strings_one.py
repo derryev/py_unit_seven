@@ -32,11 +32,14 @@ def title_case(sentence):
 
 
 def main():
-    word = "bread"
+    word = input("What word would you like to have its first and last half swapped? ")
+    first_last_word = input("What word would you like to have its first and last letters removed? ")
+    longest_phrase = input("Please type the phrase with which you want to determine the length of the longest word: ")
+    title_sentence = input("Please type the sentence you would like to convert to title case: ")
     print(half_slice(word))
-    print(no_first_last("python"))
-    print(longest("If you tell the truth you don't have to remember anything"))
-    print(title_case("We know what we are, but know not what we may be"))
+    print(no_first_last(first_last_word))
+    print(longest(longest_phrase))
+    print(title_case(title_sentence))
 
 
 main()
