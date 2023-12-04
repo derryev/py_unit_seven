@@ -12,15 +12,31 @@ def no_first_last(word):
 
 
 def longest(phrase):
-    pass
+    list_of_words = phrase.split(" ")
+    longest_word = list_of_words[0]
+    for word in list_of_words:
+        if len(word) > len(longest_word):
+            longest_word = word
+    return len(longest_word)
 
 
 def title_case(sentence):
-    pass
+    new_word_list = []
+    individual_word_list = sentence.split(" ")
+    for word in individual_word_list:
+        cap_first_letter = word[0].upper()
+        cap_word = cap_first_letter + word[1:]
+        new_word_list.append(cap_word)
+    final_cap_sentence = " ".join(new_word_list)
+    return final_cap_sentence
+
 
 def main():
-    #input("What word would you like to use?")
     word = "bread"
     print(half_slice(word))
     print(no_first_last("python"))
+    print(longest("If you tell the truth you don't have to remember anything"))
+    print(title_case("We know what we are, but know not what we may be"))
+
+
 main()
