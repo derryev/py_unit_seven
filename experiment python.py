@@ -12,8 +12,8 @@ boulders_list = ["Vintro", "V0", "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8",
 selected_boulder1 = tk.StringVar()
 selected_boulder2 = tk.StringVar()
 selected_boulder3 = tk.StringVar()
+final_score = tk.StringVar()
 
-introduction = tk.Label(text="Welcome to the bouldering competition points counter!", fg="magenta")
 
 
 def determine_dropdowns():
@@ -45,31 +45,32 @@ def calculate_score():
         elif climb == "V1":
             points = 3
         elif climb == "V2":
-            points =
+            points = 5
         elif climb == "V3":
-            points =
+            points = 7
         elif climb == "V4":
-            points =
+            points = 9
         elif climb == "V5":
-            points =
+            points = 11
         elif climb == "V6":
-            points =
+            points = 13
         elif climb == "V7":
-            points =
+            points = 15
         elif climb == "V8":
-            points =
+            points = 17
         elif climb == "V9":
-            points =
+            points = 19
         elif climb == "V10":
-            points =
+            points = 21
         else:
             points = 0
         score = score+points
+    final_score = str(score)
+    return final_score
 
 
-
-
-climb_input_question = tk.Label(text = "Are you entering 2 or 3 climbs?", fg="magenta")
+introduction = tk.Label(text="Welcome to the bouldering competition points counter!", fg="magenta")
+climb_input_question = tk.Label(text="Are you entering 2 or 3 climbs?", fg="magenta")
 climb_input = tk.StringVar()
 climb_input.set("2")
 climb_input_entry = tk.Entry(root, textvariable=climb_input, fg = "cyan")
@@ -78,9 +79,9 @@ dropdown1 = tk.OptionMenu(root, selected_boulder1, "Vintro", "V0", "V1", "V2", "
 dropdown2 = tk.OptionMenu(root, selected_boulder2, "Vintro", "V0", "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8", "V9", "V10")
 dropdown3 = tk.OptionMenu(root, selected_boulder3, "Vintro", "V0", "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8", "V9", "V10")
 button_for_number_of_dropdowns = tk.Button(root, text="Enter", command=determine_dropdowns,fg="magenta")
-
-
 calculate_score_button = tk.Button(root, text="Calculate Total Score", command=calculate_score, fg="magenta")
+score_statement = "Your current score is "+str(final_score.get())
+score_answer = tk.Label(text=score_statement,fg="magenta")
 
 
 introduction.grid(row=1, column=2, columnspan = 5)
@@ -88,6 +89,7 @@ climb_input_question.grid(row=3, column = 2, columnspan = 8)
 climb_input_entry.grid(row=4, column = 2, columnspan=8)
 button_for_number_of_dropdowns.grid(row=5,column=2,columnspan=8)
 calculate_score_button.grid(row=8,column=2,columnspan=3)
+score_answer.grid(row=10,column=2,columnspan=3)
 # dropdown.grid(row=7, column=2,columnspan=8)
 
 
