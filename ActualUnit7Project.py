@@ -4,6 +4,7 @@ import tkinter as tk
 root = tk.Tk()
 root.title("Climbing Comp Points Calculator")
 
+
 number = tk.IntVar()
 number.set(0)
 selected_boulder1 = tk.StringVar()
@@ -13,22 +14,22 @@ selected_boulder4 = tk.StringVar()
 selected_boulder5 = tk.StringVar()
 final_score = tk.StringVar()
 
-
+# azure lightcyan paleturquoise
 def determine_dropdowns():
     number_of_menus = str(climb_input.get())
-    menu_instructions = tk.Label(text="Select the grades of the highest-graded climbs you completed:", fg="magenta")
+    menu_instructions = tk.Label(text="Select the grades of the highest-graded climbs you completed:", fg="paleturquoise")
     if number_of_menus == "Top Rope":
         menu_instructions.grid(row=6, column=2, columnspan=3)
         dropdown4.grid(row=7, column=2, columnspan=2)
         dropdown5.grid(row=7, column=3, columnspan=2)
-        calculate_score_button = tk.Button(root, text="Calculate Score", command=calculate_score_ropes, fg="magenta")
+        calculate_score_button = tk.Button(root, text="Calculate Score", command=calculate_score_ropes, fg="darkslategrey")
         calculate_score_button.grid(row=8, column=2, columnspan=3)
     elif number_of_menus == "Bouldering":
         menu_instructions.grid(row=6, column=2, columnspan=3)
         dropdown1.grid(row=7, column=2, columnspan=1)
         dropdown2.grid(row=7, column=3, columnspan=1)
         dropdown3.grid(row=7, column=4, columnspan=1)
-        calculate_score_button = tk.Button(root, text="Calculate Score", command=calculate_score_boulders, fg="magenta")
+        calculate_score_button = tk.Button(root, text="Calculate Score", command=calculate_score_boulders, fg="darkslategrey")
         calculate_score_button.grid(row=8, column=2, columnspan=3)
     elif number_of_menus == "Champs":
         menu_instructions.grid(row=6, column=2, columnspan=5)
@@ -41,7 +42,7 @@ def determine_dropdowns():
         climb_label_r.grid(row=8, column=2, columnspan=2)
         dropdown4.grid(row=8, column=4, columnspan=1)
         dropdown5.grid(row=8, column=5, columnspan=1)
-        calculate_score_button = tk.Button(root, text="Calculate Score", command=calculate_score_champs, fg="magenta")
+        calculate_score_button = tk.Button(root, text="Calculate Score", command=calculate_score_champs, fg="darkslategrey")
         calculate_score_button.grid(row=9, column=2, columnspan=5)
 
 
@@ -179,8 +180,8 @@ def calculate_score_champs():
     score_answer.grid(row=10, column=2, columnspan=5)
 
 
-introduction = tk.Label(text="Welcome to the rock climbing competition points counter!", fg="magenta")
-climb_input_question = tk.Label(text="What type of competition is this?", fg="magenta")
+introduction = tk.Label(text="Welcome to the rock climbing competition points counter!", fg="paleturquoise")
+climb_input_question = tk.Label(text="What type of competition is this?", fg="paleturquoise")
 climb_input = tk.StringVar()
 climb_input.set("")
 dropdown0 = tk.OptionMenu(root, climb_input, "Bouldering", "Top Rope","Champs")
@@ -189,7 +190,7 @@ dropdown2 = tk.OptionMenu(root, selected_boulder2, "N/A", "V0", "V1", "V2", "V3"
 dropdown3 = tk.OptionMenu(root, selected_boulder3, "N/A", "V0", "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8", "V9", "V10")
 dropdown4 = tk.OptionMenu(root, selected_boulder4, "N/A", "5.6", "5.7", "5.8", "5.9", "5.10-", "5.10+", "5.11-", "5.11+", "5.12-", "5.12+")
 dropdown5 = tk.OptionMenu(root, selected_boulder5, "N/A", "5.6", "5.7", "5.8", "5.9", "5.10-", "5.10+", "5.11-", "5.11+", "5.12-", "5.12+")
-button_for_number_of_dropdowns = tk.Button(root, text="Enter", command=determine_dropdowns, fg="magenta")
+button_for_number_of_dropdowns = tk.Button(root, text="Enter", command=determine_dropdowns, fg="darkslategrey")
 
 
 introduction.grid(row=1, column=2, columnspan=5)
