@@ -14,7 +14,8 @@ selected_boulder4 = tk.StringVar()
 selected_boulder5 = tk.StringVar()
 final_score = tk.StringVar()
 
-# azure lightcyan paleturquoise
+
+
 def determine_dropdowns():
     number_of_menus = str(climb_input.get())
     menu_instructions = tk.Label(text="Select the grades of the highest-graded climbs you completed:", fg="paleturquoise")
@@ -44,6 +45,13 @@ def determine_dropdowns():
         dropdown5.grid(row=8, column=5, columnspan=1)
         calculate_score_button = tk.Button(root, text="Calculate Score", command=calculate_score_champs, fg="darkslategrey")
         calculate_score_button.grid(row=9, column=2, columnspan=5)
+
+
+def show_image():
+    print("hello")
+
+
+show_happy_image_button = tk.Button(root, text="Show Supportive Message", fg="darkslategrey", command=show_image)
 
 
 def calculate_score_boulders():
@@ -86,6 +94,7 @@ def calculate_score_boulders():
     score_statement = "Your current score is " + str(final_score_boulders)
     score_answer = tk.Label(text=score_statement, fg="cyan")
     score_answer.grid(row=10, column=2, columnspan=3)
+    show_happy_image_button.grid(row=11, column=2, columnspan=8)
 
 
 def calculate_score_ropes():
@@ -126,6 +135,7 @@ def calculate_score_ropes():
     score_statement = "Your current score is " + str(final_score_ropes)
     score_answer = tk.Label(text=score_statement, fg="cyan")
     score_answer.grid(row=10, column=2, columnspan=3)
+    show_happy_image_button.grid(row=11, column=2, columnspan=8)
 
 
 def calculate_score_champs():
@@ -178,6 +188,7 @@ def calculate_score_champs():
     score_statement = "Your current score is " + str(final_score_boulders)
     score_answer = tk.Label(text=score_statement, fg="cyan")
     score_answer.grid(row=10, column=2, columnspan=5)
+    show_happy_image_button.grid(row=11, column=2, columnspan=8)
 
 
 introduction = tk.Label(text="Welcome to the rock climbing competition points counter!", fg="paleturquoise")
@@ -191,12 +202,14 @@ dropdown3 = tk.OptionMenu(root, selected_boulder3, "N/A", "V0", "V1", "V2", "V3"
 dropdown4 = tk.OptionMenu(root, selected_boulder4, "N/A", "5.6", "5.7", "5.8", "5.9", "5.10-", "5.10+", "5.11-", "5.11+", "5.12-", "5.12+")
 dropdown5 = tk.OptionMenu(root, selected_boulder5, "N/A", "5.6", "5.7", "5.8", "5.9", "5.10-", "5.10+", "5.11-", "5.11+", "5.12-", "5.12+")
 button_for_number_of_dropdowns = tk.Button(root, text="Enter", command=determine_dropdowns, fg="darkslategrey")
+# image_question = tk.Label(text="Do you want to see a supportive image?", fg="paleturquoise")
 
 
 introduction.grid(row=1, column=2, columnspan=5)
 climb_input_question.grid(row=3, column=2, columnspan=8)
 dropdown0.grid(row=4, column=2, columnspan=8)
 button_for_number_of_dropdowns.grid(row=5, column=2, columnspan=8)
+
 
 
 root.mainloop()
